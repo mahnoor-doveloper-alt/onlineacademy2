@@ -40,31 +40,16 @@
     </script>
     
     <style>
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            overflow-x: hidden !important;
+        }
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    overflow-x: hidden !important;
-}
-
-.hero, .container, section, div {
-    max-width: 100% !important;
-}
-
+        .hero, .container, section, div {
+            max-width: 100% !important;
+        }
 
         * {
             margin: 0;
@@ -454,13 +439,12 @@ html, body {
         
         /* Container */
         .container {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: 0 auto;
-}
-
+            width: 100% !important;
+            max-width: 100% !important;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin: 0 auto;
+        }
         
         /* ========== RESPONSIVE STYLES ========== */
         
@@ -697,24 +681,22 @@ html, body {
             }
         }
 
-
-
         .responsive-grid {
-    display: grid;
-    grid-template-columns: 1fr;   /* mobile = 1 column */
-    gap: 20px;
-}
+            display: grid;
+            grid-template-columns: 1fr;   /* mobile = 1 column */
+            gap: 20px;
+        }
 
         @media (min-width: 768px) {
-    .responsive-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (min-width: 1024px) {
-    .responsive-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+            .responsive-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .responsive-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
 
         /* Extra Small Mobile (under 360px) */
         @media (max-width: 359px) {
@@ -750,6 +732,49 @@ html, body {
         /* Calibri font styling for hero section */
         .hero-title, .hero-subtitle, .hero-quote {
             font-family: 'Calibri', sans-serif;
+        }
+
+        /* Reviews and Certificates Section */
+        .reviews-certificates-section {
+            background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+            padding: 80px 0;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .student-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .certificate-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-img:hover {
+            transform: scale(1.03);
+        }
+
+        .stars {
+            color: #F8B735;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -1384,6 +1409,110 @@ html, body {
         </div>
     </section>
 
+    <!-- Reviews and Certificates Section -->
+    <section class="reviews-certificates-section" id="reviews-certificates">
+        <div class="container">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4" data-aos="fade-up">Student Reviews & Certificates</h2>
+            <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-12" data-aos="fade-up">See what our students say about their learning experience and view their achievement certificates</p>
+            
+            <!-- Student Reviews -->
+            <div class="mb-16" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-center text-primary mb-8">What Our Students Say</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Review 1 -->
+                    <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-4">
+                            
+                            <div>
+                                <h4 class="font-bold text-primary">Ayesha Khan</h4>
+                                <p class="text-sm text-gray-600">Basic Tajweed Course</p>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Mahnoor teacher is very patient and explains everything so clearly. My Quran recitation has improved so much in just 3 months. Highly recommended!"</p>
+                        <div class="text-sm text-gray-500">Completed: March 2023</div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-4">
+                            
+                            <div>
+                                <h4 class="font-bold text-primary">Fatima Ahmed</h4>
+                                <p class="text-sm text-gray-600">Namaz & Duas Course</p>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 mb-4">"I learned proper Salah with correct pronunciation. Teacher Mahnoor is very knowledgeable and makes learning easy. Now I pray with confidence."</p>
+                        <div class="text-sm text-gray-500">Completed: January 2023</div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="review-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center mb-4">
+                            
+                            <div>
+                                <h4 class="font-bold text-primary">Zainab Ali</h4>
+                                <p class="text-sm text-gray-600">Kids Quran Course</p>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 mb-4">"My daughter loves her Quran classes with Mahnoor teacher. The teaching method is so engaging for kids. She has memorized 5 short surahs already!"</p>
+                        <div class="text-sm text-gray-500">Completed: February 2023</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Student Certificates -->
+            <div data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-center text-primary mb-8">Student Achievement Certificates</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Certificate 1 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <img src="image/1.jpg" alt="Certificate" class="certificate-img mb-4">
+                        <h4 class="font-bold text-primary">Maryam Basharat</h4>
+                        <p class="text-sm text-gray-600"> Tajweed Course</p>
+                        <p class="text-sm text-gray-500">Completed: September 2025</p>
+                    </div>
+                    
+                    <!-- Certificate 2 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <img src="image/8.jpg" alt="Certificate" class="certificate-img mb-4">
+                        <h4 class="font-bold text-primary">Aiman Amjad</h4>
+                        <p class="text-sm text-gray-600">Tajweed Course</p>
+                        <p class="text-sm text-gray-500">Completed: September 2025</p>
+                    </div>
+                    
+                    <!-- Certificate 3 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <img src="image/2.jpg" alt="Certificate" class="certificate-img mb-4">
+                        <h4 class="font-bold text-primary">Samiya Atta</h4>
+                        <p class="text-sm text-gray-600">Tajweed course</p>
+                        <p class="text-sm text-gray-500">Completed: September 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="container">
@@ -1408,6 +1537,7 @@ html, body {
                         <li><a href="#kids-quran">Kids Quran</a></li>
                         <li><a href="#pakistani-students">Pakistani Students</a></li>
                         <li><a href="#free-trial">Free Trial</a></li>
+                        <li><a href="#reviews-certificates">Reviews & Certificates</a></li>
                     </ul>
                 </div>
                 
