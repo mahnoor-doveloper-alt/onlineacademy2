@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mahnoor Online Academy - Professional Tajweed Learning</title>
+    <link rel="icon" href="image/logu.jpg">
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Calibri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2D5B7C',
+                        'secondary': '#F8B735',
+                        'accent': '#38B2AC',
+                        'light': '#F7FAFC',
+                        'dark': '#2D3748',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'calibri': ['Calibri', 'Arial', 'sans-serif'],
+                        'arabic': ['Arial', 'sans-serif']
+                    },
+                    screens: {
+                        'xs': '475px',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+.hero, .container, section, div {
+    max-width: 100% !important;
+}
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2D3748;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Logo Styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-static {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(45, 91, 124, 0.2);
+        }
+        
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(45, 91, 124, 0.85), rgba(30, 58, 95, 0.9)), 
+                        url('image/quran.jpg') center/cover;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 60px;
+        }
+        
+        .hero-content {
+            width: 100%;
+            padding: 20px 0;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-quote {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            max-width: 100%;
+        }
+        
+        .hero-quote p {
+            font-size: 1.125rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+        
+        /* New Sections */
+        .quran-parhai-section {
+            background: linear-gradient(135deg, #1E3A5F 0%, #2D5B7C 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .namaz-duas-section {
+            background: linear-gradient(135deg, #2D5B7C 0%, #1E3A5F 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .kids-quran-section {
+            background: linear-gradient(135deg, #1E3A5F 0%, #2D5B7C 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .section-banner {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .feature-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card i {
+            background: #F8B735;
+            color: #2D5B7C;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        /* Pakistani Students Section */
+        .pakistani-students-section {
+            background: linear-gradient(135deg, #2D5B7C 0%, #1E3A5F 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .pakistani-banner {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .course-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .course-feature i {
+            background: #F8B735;
+            color: #2D5B7C;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        /* Enrollment Modal */
+        .enrollment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .enrollment-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .enrollment-form {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .enrollment-modal.active .enrollment-form {
+            transform: translateY(0);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background-color: #ffffff;
+            color: #2D5B7C;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e6a523;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: #2D5B7C;
+            transform: translateY(-2px);
+        }
+        
+        /* Course Cards */
+        .course-card {
+            height: 100%;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Trial Banners */
+        .trial-banner {
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+        
+        .kids-banner {
+            background:  rgba(30, 58, 95, 0.9);
+            color: hwb(206 97% 0%);
+        }
+        
+        .adults-banner {
+            background:  rgba(30, 58, 95, 0.9);
+            color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #2D5B7C;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #F8B735;
+        }
+        
+        .footer a {
+            color: #e2e8f0;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: #F8B735;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        /* Responsive Grid */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        /* Section Spacing */
+        .section {
+            padding: 80px 0;
+        }
+        
+        /* Container */
+        .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+        
+        /* ========== RESPONSIVE STYLES ========== */
+        
+        /* Large Desktop (1200px and up) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        /* Desktop (992px to 1199px) */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .desktop-nav {
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Tablet (768px to 991px) */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container {
+                max-width: 720px;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+                min-height: 80vh;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .desktop-nav {
+                display: none !important;
+            }
+            
+            .mobile-nav-btn {
+                display: block !important;
+            }
+            
+            .pakistani-banner, .section-banner {
+                padding: 30px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+        
+        /* Mobile Landscape (576px to 767px) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .container {
+                max-width: 540px;
+            }
+            
+            .hero {
+                padding: 110px 0 50px;
+                min-height: 75vh;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+            
+            .hero-quote {
+                text-align: center;
+                width: 100%;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .pakistani-banner, .section-banner {
+                padding: 25px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .mobile-menu {
+                width: 280px;
+            }
+        }
+        
+        /* Mobile Portrait (475px to 575px) */
+        @media (min-width: 475px) and (max-width: 575px) {
+            .hero {
+                padding: 100px 0 40px;
+                min-height: 70vh;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                text-align: center;
+            }
+            
+            .hero-quote {
+                padding: 1rem;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .hero-quote p {
+                font-size: 1rem;
+            }
+            
+            .logo-static {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .logo-container .text-xl {
+                font-size: 1.1rem;
+            }
+            
+            .logo-container .text-xs {
+                font-size: 0.7rem;
+            }
+            
+            .pakistani-banner, .section-banner {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .mobile-menu {
+                width: 260px;
+            }
+        }
+        
+        /* Small Mobile (under 475px) */
+        @media (max-width: 474px) {
+            .hero {
+                padding: 90px 0 30px;
+                min-height: 65vh;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+                text-align: center;
+                line-height: 1.3;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.95rem;
+                text-align: center;
+            }
+            
+            .hero-quote {
+                padding: 1rem !important;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .hero-quote p {
+                font-size: 0.9rem;
+            }
+            
+            .logo-static {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-container .text-xl {
+                font-size: 1rem;
+            }
+            
+            .logo-container .text-xs {
+                font-size: 0.65rem;
+            }
+            
+            .pakistani-banner, .section-banner {
+                padding: 15px;
+            }
+            
+            .section {
+                padding: 30px 0;
+            }
+            
+            .mobile-menu {
+                width: 240px;
+                padding: 1.5rem;
+            }
+            
+            .enrollment-form {
+                padding: 1.5rem;
+            }
+            
+            .trial-banner {
+                min-height: auto;
+                padding: 1.5rem;
+            }
+            
+            .footer {
+                padding: 30px 0 15px;
+            }
+        }
+
+
+
+        .responsive-grid {
+    display: grid;
+    grid-template-columns: 1fr;   /* mobile = 1 column */
+    gap: 20px;
+}
+
+        
+        /* Extra Small Mobile (under 360px) */
+        @media (max-width: 359px) {
+            .hero-title {
+                font-size: 1.6rem;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9rem;
+                text-align: center;
+            }
+            
+            .mobile-menu {
+                width: 220px;
+            }
+            
+            .pakistani-banner, .section-banner {
+                padding: 12px;
+            }
+            
+            .hero-buttons .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Prevent body scroll when mobile menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        /* Calibri font styling for hero section */
+        .hero-title, .hero-subtitle, .hero-quote {
+            font-family: 'Calibri', sans-serif;
+        }
+    </style>
+</head>
+<body class="font-calibri">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="flex justify-between items-center py-3">
+                <div class="logo-container">
+                    <div class="logo-static">
+                        <img src="image/logu.jpg" alt="Mahnoor Academy" class="logo-img">
+                    </div>
+                    <div>
+                        <div class="text-xl font-bold text-primary font-arabic">Mahnoor Academy</div>
+                        <div class="text-xs text-gray-600">Online Tajweed Classes</div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav items-center space-x-8 hidden md:flex">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                    <a href="#courses" class="text-gray-700 hover:text-primary font-medium transition-colors">Courses</a>
+                    <a href="#quran-parhai" class="text-gray-700 hover:text-primary font-medium transition-colors">Quran Parhai</a>
+                    <a href="#namaz-duas" class="text-gray-700 hover:text-primary font-medium transition-colors">Namaz & Duas</a>
+                    <a href="#kids-quran" class="text-gray-700 hover:text-primary font-medium transition-colors">Kids Quran</a>
+                    <a href="#pakistani-students" class="text-gray-700 hover:text-primary font-medium transition-colors">Pakistani Students</a>
+                    <a href="#free-trial" class="text-gray-700 hover:text-primary font-medium transition-colors">Free Trial</a>
+                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-800 transition-colors">Enroll Now</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-nav-btn text-primary text-xl md:hidden" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="absolute top-4 right-4 text-gray-600 text-xl" id="close-mobile-menu">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="text-center mb-8">
+            <div class="logo-static mx-auto mb-4">
+                <img src="image/logu.jpg" alt="Mahnoor Academy" class="logo-img">
+            </div>
+            <div class="text-xl font-bold text-primary font-arabic">Mahnoor Academy</div>
+            <div class="text-sm text-gray-600">Online Tajweed Classes</div>
+        </div>
+        <div class="space-y-4">
+            <a href="#home" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-primary">Home</a>
+            <a href="#about" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-primary">About</a>
+            <a href="#courses" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-primary">Courses</a>
+            <a href="#quran-parhai" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-primary">Quran Parhai</a>
+            <a href="#namaz-duas" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-primary">Namaz & Duas</a>
+            <a href="#kids-quran" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-primary">Kids Quran</a>
+            <a href="#pakistani-students" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-primary">Pakistani Students</a>
+            <a href="#free-trial" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-primary">Free Trial</a>
+            <a href="#contact" class="block mt-6 bg-primary text-white text-center py-3 rounded-lg font-semibold">Enroll Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 mb-8 lg:mb-0" data-aos="fade-right">
+                    <div class="hero-content text-center lg:text-left">
+                        <h1 class="hero-title">
+                            Learn Tajweed<br>With Mahnoor
+                        </h1>
+                        <p class="hero-subtitle">
+                            Professional Online Quran Classes with Certified Teachers
+                        </p>
+                        <div class="hero-quote">
+                            <p class="italic mb-2">
+                                "The one who is proficient in the recitation of the Qur'an will be with the honorable and obedient scribes (angels)"
+                            </p>
+                            <p class="text-sm">— Sahih al-Bukhari 4937</p>
+                        </div>
+                        <div class="hero-buttons justify-center lg:justify-start">
+                            <a href="#courses" class="btn btn-primary">
+                                <i class="fas fa-book mr-2"></i> View Courses
+                            </a>
+                            <a href="#free-trial" class="btn btn-secondary">
+                                <i class="fas fa-calendar-check mr-2"></i> Free Trial
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Content with Logo -->
+                <div class="lg:w-1/2 flex justify-center" data-aos="fade-left">
+                    <div class="logo-static" style="width: 200px; height: 200px;">
+                        <img src="image/90.jpg" alt="Mahnoor Academy" class="logo-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section bg-gray-50" id="about">
+        <div class="container">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12" data-aos="fade-up">About Us</h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                        <img src="image/789.jpg" alt="Mahnoor" class="w-full h-80 object-cover">
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Welcome to Mahnoor Online Academy</h3>
+                    <p class="text-lg mb-4">I am Mahnoor, the CEO and Founder of Mahnoor Online Academy. My mission is to help students master Quranic recitation with proper Tajweed in a clear, supportive, and spiritually uplifting environment.</p>
+                    <p class="text-lg mb-4">With the support of my partner Mehak, our COO, we have built a professional platform where students receive personalized attention and step-by-step guidance. Alhamdulillah, many students have already benefited from our teaching and have improved their recitation skills.</p>
+                    
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <i class="fas fa-user-graduate text-primary text-2xl mb-2"></i>
+                            <p class="font-bold">Certified Tajweed Teacher</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <i class="fas fa-users text-primary text-2xl mb-2"></i>
+                            <p class="font-bold">Online Classes Join Anytime</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <i class="fas fa-award text-primary text-2xl mb-2"></i>
+                            <p class="font-bold">Comfortable Learning for Sisters</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="section" id="courses">
+        <div class="container">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4" data-aos="fade-up">Our Tajweed Courses</h2>
+            <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-12" data-aos="fade-up">Structured Tajweed courses choose your level and join anytime with flexible timings.</p>
+            
+            <div class="responsive-grid">
+                <!-- Basic Course -->
+                <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="bg-primary text-white p-6 text-center">
+                        <h3 class="text-2xl font-bold">Basic Tajweed</h3>
+                        <p class="opacity-90">For Beginners</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>Arabic letters pronunciation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>Basic rules of Tajweed</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>Short surahs practice</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>3 classes per week</span>
+                            </li>
+                        </ul>
+                        <div class="text-center mb-4">
+                            <span class="text-3xl font-bold text-primary">$20</span>
+                            <span class="text-gray-600">/ month</span>
+                        </div>
+                        <button class="enroll-btn w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors" data-course="Basic Tajweed" data-fee="20">Enroll Now</button>
+                    </div>
+                </div>
+                
+                <!-- Intermediate Course -->
+                <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 bg-secondary text-primary px-4 py-1 rounded-bl-lg font-bold">
+                        Popular
+                    </div>
+                    <div class="bg-primary text-white p-6 text-center">
+                        <h3 class="text-2xl font-bold">Intermediate Tajweed</h3>
+                        <p class="opacity-90">With Makharij Practice</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>Makharij & Sifaat practice</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>Rules of Noon & Meem</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>Medium length surahs</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>4 classes per week</span>
+                            </li>
+                        </ul>
+                        <div class="text-center mb-4">
+                            <span class="text-3xl font-bold text-primary">$30</span>
+                            <span class="text-gray-600">/ month</span>
+                        </div>
+                        <button class="enroll-btn w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors" data-course="Intermediate Tajweed" data-fee="30">Enroll Now</button>
+                    </div>
+                </div>
+                
+                <!-- Advanced Course -->
+                <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary text-white p-6 text-center">
+                        <h3 class="text-2xl font-bold">Advanced Tajweed</h3>
+                        <p class="opacity-90">With Qirat Perfection</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>Advanced Tajweed rules</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>Qirat styles introduction</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>Long surahs fluency</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                <span>5 classes per week</span>
+                            </li>
+                        </ul>
+                        <div class="text-center mb-4">
+                            <span class="text-3xl font-bold text-primary">$40</span>
+                            <span class="text-gray-600">/ month</span>
+                        </div>
+                        <button class="enroll-btn w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors" data-course="Advanced Tajweed" data-fee="40">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quran Parhai Section -->
+    <section class="quran-parhai-section" id="quran-parhai">
+        <div class="container">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-4" data-aos="fade-up">Complete Quran Parhai</h2>
+            <p class="text-center text-lg text-white/80 max-w-2xl mx-auto mb-12" data-aos="fade-up">Learn to read the complete Quran with proper Tajweed from beginning to end</p>
+            
+            <div class="section-banner" data-aos="fade-up">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Quran Parhai with Tajweed</h3>
+                        
+                        <div class="mb-6">
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Complete Quran reading from start to finish</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Proper pronunciation of every letter</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Tajweed rules applied throughout</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Regular practice and revision sessions</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Certificate upon completion</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-lg p-4 mb-6">
+                            <h4 class="font-bold text-lg mb-2">Course Duration: 6-12 Months</h4>
+                            <p class="text-white/80">Flexible schedule based on student's pace</p>
+                        </div>
+                        
+                        <button class="quran-parhai-btn w-full bg-secondary text-primary py-3 rounded-lg font-semibold hover:bg-[#e6a523] transition-colors">
+                            Enroll in Quran Parhai Course
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-bold mb-4">What You'll Learn</h4>
+                        <div class="bg-white/10 rounded-lg p-4 mb-6">
+                            <div class="mb-3">
+                                <p class="font-bold">Quran Reading:</p>
+                                <p class="text-white/90">From basic Arabic letters to fluent Quran recitation</p>
+                            </div>
+                            <div class="mb-3">
+                                <p class="font-bold">Tajweed Rules:</p>
+                                <p class="text-white/90">All essential Tajweed rules with practical application</p>
+                            </div>
+                            <div>
+                                <p class="font-bold">Fluency Development:</p>
+                                <p class="text-white/90">Building confidence in Quran recitation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">Course Structure</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-white/80">
+                                <li>Basic Arabic letters and sounds</li>
+                                <li>Short surahs practice</li>
+                                <li>Medium length surahs with Tajweed</li>
+                                <li>Long surahs and complete Juz</li>
+                                <li>Complete Quran reading with Tajweed</li>
+                                <li>Final assessment and certificate</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Namaz & Duas Section -->
+    <section class="namaz-duas-section" id="namaz-duas">
+        <div class="container">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-4" data-aos="fade-up">Namaz & Duas Learning</h2>
+            <p class="text-center text-lg text-white/80 max-w-2xl mx-auto mb-12" data-aos="fade-up">Learn proper Salah with correct pronunciation and essential daily Duas</p>
+            
+            <div class="section-banner" data-aos="fade-up">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Perfect Your Salah & Duas</h3>
+                        
+                        <div class="mb-6">
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Complete Salah with proper pronunciation</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Essential daily Duas and Azkar</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Wudu and Ghusl procedures</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Salah positions and movements</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Quranic verses for Salah</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-lg p-4 mb-6">
+                            <h4 class="font-bold text-lg mb-2">Course Duration: 2-3 Months</h4>
+                            <p class="text-white/80">Master your daily prayers and spiritual connection</p>
+                        </div>
+                        
+                        <button class="namaz-duas-btn w-full bg-secondary text-primary py-3 rounded-lg font-semibold hover:bg-[#e6a523] transition-colors">
+                            Learn Namaz & Duas
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-bold mb-4">Course Highlights</h4>
+                        <div class="bg-white/10 rounded-lg p-4 mb-6">
+                            <div class="mb-3">
+                                <p class="font-bold">Daily Prayers:</p>
+                                <p class="text-white/90">All 5 daily Salah with complete procedure</p>
+                            </div>
+                            <div class="mb-3">
+                                <p class="font-bold">Essential Duas:</p>
+                                <p class="text-white/90">Morning/evening Azkar, sleeping/waking Duas</p>
+                            </div>
+                            <div>
+                                <p class="font-bold">Special Prayers:</p>
+                                <p class="text-white/90">Friday prayer, Eid prayer, and funeral prayer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">What You'll Master</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-white/80">
+                                <li>Proper Wudu and Ghusl</li>
+                                <li>Complete Fajr, Dhuhr, Asr, Maghrib, Isha</li>
+                                <li>Quran recitation in Salah</li>
+                                <li>Daily Azkar and Duas</li>
+                                <li>Special occasion prayers</li>
+                                <li>Common mistakes and corrections</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kids Quran Section -->
+    <section class="kids-quran-section" id="kids-quran">
+        <div class="container">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-4" data-aos="fade-up">Kids Quran Learning</h2>
+            <p class="text-center text-lg text-white/80 max-w-2xl mx-auto mb-12" data-aos="fade-up">Fun and engaging Quran classes specially designed for children</p>
+            
+            <div class="section-banner" data-aos="fade-up">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Quran for Kids (Ages 5-12)</h3>
+                        
+                        <div class="mb-6">
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Interactive and fun learning methods</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Colorful visual materials and games</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Basic Islamic stories and morals</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Short surahs and daily Duas</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-check"></i>
+                                <span>Progress reports for parents</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-lg p-4 mb-6">
+                            <h4 class="font-bold text-lg mb-2">Age Groups: 5-7, 8-10, 11-12</h4>
+                            <p class="text-white/80">Age-appropriate curriculum and teaching methods</p>
+                        </div>
+                        
+                        <button class="kids-quran-btn w-full bg-secondary text-primary py-3 rounded-lg font-semibold hover:bg-[#e6a523] transition-colors">
+                            Enroll Your Child
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-bold mb-4">Kids Learning Approach</h4>
+                        <div class="bg-white/10 rounded-lg p-4 mb-6">
+                            <div class="mb-3">
+                                <p class="font-bold">Fun Activities:</p>
+                                <p class="text-white/90">Quranic games, stories, and interactive sessions</p>
+                            </div>
+                            <div class="mb-3">
+                                <p class="font-bold">Visual Learning:</p>
+                                <p class="text-white/90">Colorful charts, animations, and visual aids</p>
+                            </div>
+                            <div>
+                                <p class="font-bold">Reward System:</p>
+                                <p class="text-white/90">Stars, certificates, and appreciation for progress</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">Curriculum Overview</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-white/80">
+                                <li>Arabic alphabet with sounds</li>
+                                <li>Basic Quran reading</li>
+                                <li>Short surahs memorization</li>
+                                <li>Islamic manners and stories</li>
+                                <li>Daily Duas for children</li>
+                                <li>Basic Tajweed for kids</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pakistani Students Section -->
+    <section class="pakistani-students-section" id="pakistani-students">
+        <div class="container">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-4" data-aos="fade-up">Special Offer for Pakistani Students</h2>
+            <p class="text-center text-lg text-white/80 max-w-2xl mx-auto mb-12" data-aos="fade-up">Complete Tajweed course with only 500 PKR registration fee. Full course is free after registration!</p>
+            
+            <div class="pakistani-banner" data-aos="fade-up">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Free Tajweed Course for Pakistani Students</h3>
+                        
+                        <div class="mb-6">
+                            <div class="course-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Complete Tajweed rules with practice</span>
+                            </div>
+                            <div class="course-feature">
+                                <i class="fas fa-check"></i>
+                                <span>4 short Surahs with proper pronunciation</span>
+                            </div>
+                            <div class="course-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Flexible class timings</span>
+                            </div>
+                            <div class="course-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Join anytime from anywhere in Pakistan</span>
+                            </div>
+                            <div class="course-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Certificate upon completion</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-lg p-4 mb-6">
+                            <h4 class="font-bold text-lg mb-2">Registration Fee: 500 PKR Only</h4>
+                            <p class="text-white/80">Complete course is free after registration fee</p>
+                        </div>
+                        
+                        <button class="pakistani-enroll-btn w-full bg-secondary text-primary py-3 rounded-lg font-semibold hover:bg-[#e6a523] transition-colors">
+                            Register Now - 500 PKR Only
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-bold mb-4">Payment Details</h4>
+                        <div class="bg-white/10 rounded-lg p-4 mb-6">
+                            <div class="mb-3">
+                                <p class="font-bold">Account Name:</p>
+                                <p class="text-white/90">Mahnoor Zaheer</p>
+                            </div>
+                            <div class="mb-3">
+                                <p class="font-bold">Account Number:</p>
+                                <p class="text-white/90">0318585597</p>
+                            </div>
+                            <div>
+                                <p class="font-bold">Payment Method:</p>
+                                <p class="text-white/90">Easy Paisa / JazzCash</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">Registration Process</h4>
+                            <ol class="list-decimal list-inside space-y-2 text-white/80">
+                                <li>Send 500 PKR via Easy Paisa or JazzCash</li>
+                                <li>Take screenshot of payment confirmation</li>
+                                <li>Click Register Now button</li>
+                                <li>Send screenshot via WhatsApp</li>
+                                <li>We'll contact you for class schedule</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Trial Section -->
+    <section class="section bg-gray-50" id="free-trial">
+        <div class="container">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4" data-aos="fade-up">Free Trial Classes</h2>
+            <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-12" data-aos="fade-up">Experience our teaching methodology with free trial classes for kids and adults. One week free trial then regular classes start.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="trial-banner kids-banner rounded-2xl shadow-lg overflow-hidden" data-aos="fade-right">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold">Kids Classes</h3>
+                        <p class="opacity-90">Ages 5-12</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                <span>Interactive learning methods</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                <span>Colorful visual materials</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                <span>Fun Quranic stories</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                <span>Short, engaging sessions</span>
+                            </li>
+                        </ul>
+                        <button class="free-trial-btn w-full bg-white text-primary py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" data-type="Kids Classes">Book Free Trial</button>
+                    </div>
+                </div>
+                
+                <div class="trial-banner adults-banner rounded-2xl shadow-lg overflow-hidden" data-aos="fade-left">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold">Adult Classes</h3>
+                        <p class="opacity-90">Ages 13+</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                <span>Flexible timing options</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                <span>Comprehensive curriculum</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                <span>Focus on prayer recitation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                <span>Personalized attention</span>
+                            </li>
+                        </ul>
+                        <button class="free-trial-btn w-full bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-[rgba(30,58,95,0.9)] transition-colors" data-type="Adult Classes">
+                            Book Free Trial
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3>Mahnoor Academy</h3>
+                    <p class="mt-4">Professional online Tajweed classes for students worldwide. Learn Quran recitation with proper pronunciation and rules.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.facebook.com/profile.php?id=61577964732853"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923141836979" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#quran-parhai">Quran Parhai</a></li>
+                        <li><a href="#namaz-duas">Namaz & Duas</a></li>
+                        <li><a href="#kids-quran">Kids Quran</a></li>
+                        <li><a href="#pakistani-students">Pakistani Students</a></li>
+                        <li><a href="#free-trial">Free Trial</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Courses</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#courses">Basic Tajweed</a></li>
+                        <li><a href="#courses">Intermediate Tajweed</a></li>
+                        <li><a href="#courses">Advanced Tajweed</a></li>
+                        <li><a href="#quran-parhai">Complete Quran Parhai</a></li>
+                        <li><a href="#namaz-duas">Namaz & Duas</a></li>
+                        <li><a href="#kids-quran">Kids Quran Learning</a></li>
+                        <li><a href="#pakistani-students">Pakistani Students Free Course</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Contact Us</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><i class="fas fa-phone mr-2"></i> +92 314 1836979</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@mahnooracademy.com</li>
+                        <li><i class="fas fa-globe mr-2"></i> Worldwide Online Classes</li>
+                        <li><i class="fas fa-clock mr-2"></i> 9:00 AM - 9:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Mahnoor Online Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enrollment Modal Container -->
+    <div id="enrollment-modal-root"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const closeMenu = document.getElementById('close-mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu && mobileMenuOverlay && closeMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                document.body.classList.add('menu-open');
+            });
+            
+            closeMenu.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+            
+            mobileMenuOverlay.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                    }
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+        });
+
+        // Enrollment Modal Functions
+        let currentModalData = {};
+
+        function openEnrollmentModal(course, fee, type) {
+            currentModalData = { course, fee, type };
+            
+            const modal = document.createElement('div');
+            modal.className = 'enrollment-modal active';
+            modal.id = 'enrollment-modal';
+            modal.innerHTML = `
+                <div class="enrollment-form">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-primary">
+                            ${type ? 'Free Trial Registration' : 'Enroll Now'}
+                        </h3>
+                        <button class="close-modal text-gray-500 text-xl" onclick="closeEnrollmentModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <form id="enrollment-form">
+                        ${type ? `
+                            <div class="mb-4">
+                                <label class="block text-primary font-semibold mb-2">Trial Type</label>
+                                <input type="text" value="${type}" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-100" readonly>
+                            </div>
+                        ` : `
+                            <div class="mb-4">
+                                <label class="block text-primary font-semibold mb-2">Selected Course</label>
+                                <input type="text" value="${course}" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-100" readonly>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-primary font-semibold mb-2">Monthly Fee</label>
+                                <input type="text" value="$${fee}/month" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-100" readonly>
+                            </div>
+                        `}
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-primary font-semibold mb-2">Full Name</label>
+                                <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            <div>
+                                <label class="block text-primary font-semibold mb-2">Phone Number</label>
+                                <input type="tel" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-primary font-semibold mb-2">Email Address</label>
+                            <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-primary font-semibold mb-2">Country</label>
+                            <input type="text" name="country" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-primary font-semibold mb-2">Previous Quranic Knowledge</label>
+                            <select name="knowledge" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                <option value="">Select Level</option>
+                                <option value="Beginner">Beginner (No prior knowledge)</option>
+                                <option value="Basic">Basic (Can read but no Tajweed)</option>
+                                <option value="Intermediate">Intermediate (Some Tajweed knowledge)</option>
+                                <option value="Advanced">Advanced (Good Tajweed but needs refinement)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-primary font-semibold mb-2">Preferred Class Timings</label>
+                            <select name="timing" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                <option value="">Select Timing</option>
+                                <option value="Morning">Morning (9 AM - 12 PM)</option>
+                                <option value="Afternoon">Afternoon (12 PM - 3 PM)</option>
+                                <option value="Evening">Evening (3 PM - 6 PM)</option>
+                                <option value="Night">Night (6 PM - 9 PM)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors">
+                            ${type ? 'Register for Free Trial' : 'Submit Enrollment'}
+                        </button>
+                    </form>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Add form submit handler
+            document.getElementById('enrollment-form').addEventListener('submit', handleEnrollmentSubmit);
+        }
+
+        function openPakistaniRegistrationModal() {
+            currentModalData = { course: "Pakistani Students Free Course", fee: "500 PKR", type: "Pakistani Students" };
+            
+            const modal = document.createElement('div');
+            modal.className = 'enrollment-modal active';
+            modal.id = 'enrollment-modal';
+            modal.innerHTML = `
+                <div class="enrollment-form">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-primary">
+                            Pakistani Students Registration
+                        </h3>
+                        <button class="close-modal text-gray-500 text-xl" onclick="closeEnrollmentModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-yellow-400"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    <strong>Important:</strong> Please complete payment of 500 PKR via Easy Paisa or JazzCash before registration. Account details: Mahnoor Zaheer - 0318585597
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form id="pakistani-enrollment-form">
+                        <div class="mb-4">
+                            <label class="block text-primary font-semibold mb-2">Selected Course</label>
+                            <input type="text" value="Pakistani Students Free Course" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-100" readonly>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-primary font-semibold mb-2">Registration Fee</label>
+                            <input type="text" value="500 PKR Only" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-100" readonly>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-primary font-semibold mb-2">Full Name</label>
+                                <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            <div>
+                                <label class="block text-primary font-semibold mb-2">Phone Number</label>
+                                <input type="tel" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-primary font-semibold mb-2">City</label>
+                            <input type="text" name="city" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-primary font-semibold mb-2">Payment Transaction ID</label>
+                            <input type="text" name="transactionId" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Enter Easy Paisa/JazzCash Transaction ID" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-primary font-semibold mb-2">Previous Quranic Knowledge</label>
+                            <select name="knowledge" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                <option value="">Select Level</option>
+                                <option value="Beginner">Beginner (No prior knowledge)</option>
+                                <option value="Basic">Basic (Can read but no Tajweed)</option>
+                                <option value="Intermediate">Intermediate (Some Tajweed knowledge)</option>
+                                <option value="Advanced">Advanced (Good Tajweed but needs refinement)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-primary font-semibold mb-2">Preferred Class Timings</label>
+                            <select name="timing" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                <option value="">Select Timing</option>
+                                <option value="Morning">Morning (9 AM - 12 PM)</option>
+                                <option value="Afternoon">Afternoon (12 PM - 3 PM)</option>
+                                <option value="Evening">Evening (3 PM - 6 PM)</option>
+                                <option value="Night">Night (6 PM - 9 PM)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-secondary text-primary py-3 rounded-lg font-semibold hover:bg-[#e6a523] transition-colors">
+                            Register Now - 500 PKR
+                        </button>
+                    </form>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Add form submit handler
+            document.getElementById('pakistani-enrollment-form').addEventListener('submit', handlePakistaniEnrollmentSubmit);
+        }
+
+        function closeEnrollmentModal() {
+            const modal = document.getElementById('enrollment-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        function handleEnrollmentSubmit(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const studentData = {
+                id: Date.now(),
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                country: formData.get('country'),
+                knowledge: formData.get('knowledge'),
+                timing: formData.get('timing'),
+                course: currentModalData.type ? currentModalData.type : currentModalData.course,
+                fee: currentModalData.type ? 'Free Trial' : currentModalData.fee,
+                type: currentModalData.type ? 'Free Trial' : 'Paid Course',
+                enrollmentDate: new Date().toISOString()
+            };
+
+            // Send WhatsApp notification
+            sendWhatsAppNotification(studentData);
+
+            // Show success message
+            showSuccessMessage();
+        }
+
+        function handlePakistaniEnrollmentSubmit(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const studentData = {
+                id: Date.now(),
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                city: formData.get('city'),
+                transactionId: formData.get('transactionId'),
+                knowledge: formData.get('knowledge'),
+                timing: formData.get('timing'),
+                course: "Pakistani Students Free Course",
+                fee: "500 PKR",
+                type: "Pakistani Students",
+                enrollmentDate: new Date().toISOString()
+            };
+
+            // Send WhatsApp notification for Pakistani students
+            sendPakistaniWhatsAppNotification(studentData);
+
+            // Show success message
+            showPakistaniSuccessMessage();
+        }
+
+        function sendWhatsAppNotification(studentData) {
+            const isFreeTrial = studentData.type === 'Free Trial';
+            const message = isFreeTrial ? 
+                `🎓 *Free Trial Registration - Mahnoor Academy* 🎓
+
+*Student Details:*
+📛 Name: ${studentData.name}
+📞 Phone: ${studentData.phone}
+📧 Email: ${studentData.email}
+🌍 Country: ${studentData.country}
+
+*Trial Details:*
+📚 Type: ${studentData.course}
+⏰ Preferred Timing: ${studentData.timing}
+
+*Background:*
+📖 Previous Knowledge: ${studentData.knowledge}
+
+*Registration Date:* ${new Date().toLocaleDateString()}
+*Time:* ${new Date().toLocaleTimeString()}
+
+One week free trial then regular classes will start.
+
+Mahnoor Academy - Online Tajweed Classes` :
+                `🎓 *New Enrollment - Mahnoor Academy* 🎓
+
+*Student Details:*
+📛 Name: ${studentData.name}
+📞 Phone: ${studentData.phone}
+📧 Email: ${studentData.email}
+🌍 Country: ${studentData.country}
+
+*Course Details:*
+📚 Course: ${studentData.course}
+💰 Monthly Fee: $${studentData.fee}
+
+*Background:*
+📖 Previous Knowledge: ${studentData.knowledge}
+⏰ Preferred Timing: ${studentData.timing}
+
+*Enrollment Date:* ${new Date().toLocaleDateString()}
+*Time:* ${new Date().toLocaleTimeString()}
+
+Mahnoor Academy - Online Tajweed Classes`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/923141836979?text=${encodedMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+        }
+
+        function sendPakistaniWhatsAppNotification(studentData) {
+            const message = `🎓 *Pakistani Student Registration - Mahnoor Academy* 🎓
+
+*Student Details:*
+📛 Name: ${studentData.name}
+📞 Phone: ${studentData.phone}
+🏙️ City: ${studentData.city}
+
+*Course Details:*
+📚 Course: ${studentData.course}
+💰 Registration Fee: ${studentData.fee}
+💳 Transaction ID: ${studentData.transactionId}
+
+*Background:*
+📖 Previous Knowledge: ${studentData.knowledge}
+⏰ Preferred Timing: ${studentData.timing}
+
+*Registration Date:* ${new Date().toLocaleDateString()}
+*Time:* ${new Date().toLocaleTimeString()}
+
+Complete Tajweed course with 4 short Surahs. Full course is free after registration fee.
+
+Mahnoor Academy - Online Tajweed Classes`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/923141836979?text=${encodedMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+        }
+
+        function showSuccessMessage() {
+            const modal = document.getElementById('enrollment-modal');
+            if (modal) {
+                modal.querySelector('.enrollment-form').innerHTML = `
+                    <div class="text-center p-8">
+                        <i class="fas fa-check-circle text-5xl text-accent mb-4"></i>
+                        <h3 class="text-2xl font-bold text-primary mb-4">
+                            ${currentModalData.type ? 'Free Trial Registered!' : 'Enrollment Submitted!'}
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            ${currentModalData.type 
+                                ? 'Your free trial registration has been received successfully. WhatsApp notification has been sent to Mahnoor Academy.' 
+                                : 'Your enrollment has been received successfully. WhatsApp notification has been sent to Mahnoor Academy.'}
+                        </p>
+                        <p class="text-gray-600">
+                            ${currentModalData.type 
+                                ? 'You will be contacted shortly to schedule your free trial classes.' 
+                                : 'You will be contacted shortly for further details.'}
+                        </p>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    closeEnrollmentModal();
+                }, 3000);
+            }
+        }
+
+        function showPakistaniSuccessMessage() {
+            const modal = document.getElementById('enrollment-modal');
+            if (modal) {
+                modal.querySelector('.enrollment-form').innerHTML = `
+                    <div class="text-center p-8">
+                        <i class="fas fa-check-circle text-5xl text-accent mb-4"></i>
+                        <h3 class="text-2xl font-bold text-primary mb-4">
+                            Registration Successful!
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Your registration for the Pakistani Students Free Course has been received successfully. WhatsApp notification has been sent to Mahnoor Academy.
+                        </p>
+                        <p class="text-gray-600">
+                            You will be contacted shortly to schedule your classes. The complete Tajweed course with 4 short Surahs is free after the 500 PKR registration fee.
+                        </p>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    closeEnrollmentModal();
+                }, 4000);
+            }
+        }
+
+        // Add event listeners to enroll buttons
+        document.querySelectorAll('.enroll-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const course = this.getAttribute('data-course');
+                const fee = this.getAttribute('data-fee');
+                openEnrollmentModal(course, fee, '');
+            });
+        });
+
+        // Pakistani students registration button
+        document.querySelector('.pakistani-enroll-btn').addEventListener('click', function() {
+            openPakistaniRegistrationModal();
+        });
+
+        // New section buttons
+        document.querySelector('.quran-parhai-btn').addEventListener('click', function() {
+            openEnrollmentModal('Complete Quran Parhai', '30', '');
+        });
+
+        document.querySelector('.namaz-duas-btn').addEventListener('click', function() {
+            openEnrollmentModal('Namaz & Duas Course', '25', '');
+        });
+
+        document.querySelector('.kids-quran-btn').addEventListener('click', function() {
+            openEnrollmentModal('Kids Quran Learning', '20', '');
+        });
+
+        // Free trial buttons
+        document.querySelectorAll('.free-trial-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const type = this.getAttribute('data-type');
+                openEnrollmentModal('', '', type);
+            });
+        });
+
+        // Make functions globally available
+        window.closeEnrollmentModal = closeEnrollmentModal;
+    </script>
+</body>
+</html>
