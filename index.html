@@ -705,7 +705,17 @@ html, body {
     gap: 20px;
 }
 
-        
+        @media (min-width: 768px) {
+    .responsive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .responsive-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
         /* Extra Small Mobile (under 360px) */
         @media (max-width: 359px) {
             .hero-title {
